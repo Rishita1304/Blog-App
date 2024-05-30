@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  expo:
+    build: .
+    ports:
+      - '19000:19000'
+      - '19001:19001' # For Metro bundler
+      - '19002:19002' # For the Expo dev tools
+    volumes:
+      - .:/app
+    environment:
+      - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
+      - REACT_NATIVE_PACKAGER_HOSTNAME=localhost
